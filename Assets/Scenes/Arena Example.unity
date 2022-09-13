@@ -439,7 +439,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5671758111218160154, guid: 815c6406ef6b5774caf4d1842ffa95ed, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5671758111218160154, guid: 815c6406ef6b5774caf4d1842ffa95ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -854,7 +854,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.5428994, b: 0.24264705, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
@@ -917,7 +917,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 11.069, y: -120.87, z: 22.699001}
 --- !u!1001 &1526173083
 PrefabInstance:
