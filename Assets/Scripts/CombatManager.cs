@@ -16,6 +16,8 @@ public class CombatManager : MonoBehaviour
     public bool isDead()
     {
         return health <= 0;
+
+        
     }
 
     

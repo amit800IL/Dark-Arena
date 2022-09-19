@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public BreakOutNewInput inputActions;
+    
 
     public Animator playerAnimator;
 
@@ -28,15 +28,14 @@ public class PlayerMovement : MonoBehaviour
     private float blendX, blendY;
     public float blendSpeed;
 
-    private void Awake()
+    private void Start()
     {
 
-        inputActions = new BreakOutNewInput();
+    
         rb = GetComponent<Rigidbody>();
-        inputActions.Player.Enable();
-        inputActions.Player.Jump.started += JumpInput;
-        inputActions.Player.Attack.started += AttackInput;
-        inputActions.Player.Rotate.started += RotateInput;
+
+        InputManager.Instance.onJump.AddListener(JumpInput);
+        InputManager.Instance.onRotation.AddListener(RotateInput);
 
 
     }
@@ -47,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         IsGrouded();
 
 
-        moveInput = inputActions.Player.Move.ReadValue<Vector2>();
+        moveInput = InputManager.Instance.GetMoveInput();
         newMove = moveInput.x * transform.right + moveInput.y * transform.forward;
         if (newMove.magnitude > 1)
             newMove.Normalize();
@@ -96,23 +95,12 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-    public void AttackInput(InputAction.CallbackContext context)
-    {
-        if (context.phase == InputActionPhase.Started && isGrounded)
-        {
-            Attack();
-        }
-    }
-    public void Attack()
-    {
-        playerAnimator.Play("Attack");
-
-    }
+   
 
 
-    public void JumpInput(InputAction.CallbackContext context)
+    public void JumpInput()
     {
-        if (context.phase == InputActionPhase.Started && isGrounded)
+        if (isGrounded)
         {
             Jump();
         }
@@ -127,9 +115,9 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    public void RotateInput(InputAction.CallbackContext context)
+    public void RotateInput()
     {
-        if (context.phase == InputActionPhase.Started && isGrounded)
+        if (isGrounded)
         {
             Rotate();
         }
