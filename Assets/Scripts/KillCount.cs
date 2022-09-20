@@ -5,8 +5,9 @@ using TMPro;
 
 public class KillCount : MonoBehaviour
 {
-    public int killcountNum;
+   
     [SerializeField] TextMeshProUGUI PlayerKillCount;
+    [SerializeField] TextMeshProUGUI PlayerBestWavesCount;
 
     private void Update()
     {
@@ -14,7 +15,9 @@ public class KillCount : MonoBehaviour
     }
     public void counting()
     {
-        PlayerKillCount.text = "Best Kill Count: " + killcountNum.ToString();
+     
+        PlayerKillCount.text = "Best Kill Count: " + DataSaver.BestkillCountNum.ToString();
+        PlayerBestWavesCount.text = "Best Waves Count : " + DataSaver.bestWavesSurvivedNum.ToString();
         
     }
 }

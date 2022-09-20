@@ -15,10 +15,10 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
+public partial class DarkArenaNewInput : IInputActionCollection2, IDisposable
 {
     public InputActionAsset asset { get; }
-    public @BreakOutNewInput()
+    public DarkArenaNewInput()
     {
         asset = InputActionAsset.FromJson(@"{
     ""name"": ""BreakOut- New Input"",
@@ -228,9 +228,9 @@ public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Click"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""a01620ca-f106-4646-bd36-b7ee2943d31f"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -276,15 +276,6 @@ public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""2ec9d9db-4b66-4965-8884-810baedc0d39"",
                     ""expectedControlType"": ""Quaternion"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""StopGame"",
-                    ""type"": ""Button"",
-                    ""id"": ""0a604366-68ee-4036-8ffb-22f07e53ab5c"",
-                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -708,17 +699,6 @@ public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
                     ""action"": ""TrackedDeviceOrientation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fb8e3bb5-de01-49f9-b563-b8bc22fa113a"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""StopGame"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -805,7 +785,6 @@ public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
-        m_UI_StopGame = m_UI.FindAction("StopGame", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -872,8 +851,8 @@ public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Rotate;
     public struct PlayerActions
     {
-        private @BreakOutNewInput m_Wrapper;
-        public PlayerActions(@BreakOutNewInput wrapper) { m_Wrapper = wrapper; }
+        private DarkArenaNewInput m_Wrapper;
+        public PlayerActions(DarkArenaNewInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
@@ -940,11 +919,10 @@ public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_RightClick;
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
-    private readonly InputAction m_UI_StopGame;
     public struct UIActions
     {
-        private @BreakOutNewInput m_Wrapper;
-        public UIActions(@BreakOutNewInput wrapper) { m_Wrapper = wrapper; }
+        private DarkArenaNewInput m_Wrapper;
+        public UIActions(DarkArenaNewInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
         public InputAction @Submit => m_Wrapper.m_UI_Submit;
         public InputAction @Cancel => m_Wrapper.m_UI_Cancel;
@@ -955,7 +933,6 @@ public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
         public InputAction @RightClick => m_Wrapper.m_UI_RightClick;
         public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
         public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
-        public InputAction @StopGame => m_Wrapper.m_UI_StopGame;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -995,9 +972,6 @@ public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
                 @TrackedDeviceOrientation.started -= m_Wrapper.m_UIActionsCallbackInterface.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnTrackedDeviceOrientation;
-                @StopGame.started -= m_Wrapper.m_UIActionsCallbackInterface.OnStopGame;
-                @StopGame.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnStopGame;
-                @StopGame.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnStopGame;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -1032,9 +1006,6 @@ public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
                 @TrackedDeviceOrientation.started += instance.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.performed += instance.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.canceled += instance.OnTrackedDeviceOrientation;
-                @StopGame.started += instance.OnStopGame;
-                @StopGame.performed += instance.OnStopGame;
-                @StopGame.canceled += instance.OnStopGame;
             }
         }
     }
@@ -1104,6 +1075,5 @@ public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
-        void OnStopGame(InputAction.CallbackContext context);
     }
 }

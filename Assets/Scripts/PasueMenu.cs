@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class PasueMenu : MonoBehaviour
 {
@@ -8,10 +10,15 @@ public class PasueMenu : MonoBehaviour
     public GameObject pasueMenuUI;
     public AudioSource sountrackMusic;
 
+    private void Start()
+    {
+        //InputManager.Instance.onClick.AddListener(Resume);
+       
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
+           
             if (gameIsPaused)
             {
                 Resume();
@@ -21,7 +28,7 @@ public class PasueMenu : MonoBehaviour
                 Pause();
             }
 
-        }
+        
     }
 
     public void Resume()

@@ -206,7 +206,7 @@
                 },
                 {
                     "name": "Click",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "a01620ca-f106-4646-bd36-b7ee2943d31f",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -254,6 +254,15 @@
                     "type": "PassThrough",
                     "id": "2ec9d9db-4b66-4965-8884-810baedc0d39",
                     "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "StopGame",
+                    "type": "Button",
+                    "id": "0a604366-68ee-4036-8ffb-22f07e53ab5c",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -675,6 +684,17 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fb8e3bb5-de01-49f9-b563-b8bc22fa113a",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "StopGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

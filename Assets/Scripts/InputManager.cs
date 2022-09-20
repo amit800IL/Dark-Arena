@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -8,22 +6,25 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     public static InputManager Instance { get; private set; }
-    public BreakOutNewInput inputActions;
+    public DarkArenaNewInput inputActions;
     public UnityEvent onAttack;
     public UnityEvent onJump;
     public UnityEvent onRotation;
+    public UnityEvent onClick;
 
 
     private void Start()
     {
         Instance = this;
-        inputActions = new BreakOutNewInput();
+        inputActions = new DarkArenaNewInput();
         inputActions.Enable();
 
 
         inputActions.Player.Attack.started += Attack_started;
         inputActions.Player.Jump.started += Jump_started;
         inputActions.Player.Rotate.started += Rotate_started;
+        inputActions.UI.Click.started += Press_Started;
+
     }
 
     private void Rotate_started(InputAction.CallbackContext context)
@@ -41,9 +42,20 @@ public class InputManager : MonoBehaviour
         onAttack?.Invoke();
     }
 
+    private void Press_Started(InputAction.CallbackContext context)
+    {
+        onClick?.Invoke();
+    }
+
     public Vector2 GetMoveInput()
     {
-        return inputActions.Player.Move.ReadValue<Vector2>();   
+        return inputActions.Player.Move.ReadValue<Vector2>();
     }
-    
+
+    public Vector2 getPressInput()
+    {
+        return inputActions.UI.Click.ReadValue<Vector2>();
+    }
+
+
 }
