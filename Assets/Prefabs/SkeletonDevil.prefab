@@ -43,10 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd66c635ea39694b979b3bae3c6d673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {fileID: 0}
-  attackRange: 1.1
   EnemyAnimator: {fileID: 5671758111360307520}
-  enemyPosition: {fileID: 5671758111218160154}
+  chaseState: {fileID: 6166074994158731063}
 --- !u!1 &2691998741013592736
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,9 +88,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a809f77012d98d40bf669b0adcd0315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {fileID: 0}
-  chastState: {fileID: 6166074994158731063}
+  chaseState: {fileID: 6166074994158731063}
   canSeePlayer: 0
+  sightRange: 20
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &5671758111218519552
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +846,6 @@ GameObject:
   - component: {fileID: 8934835967387982000}
   - component: {fileID: 43465729}
   - component: {fileID: 43465725}
-  - component: {fileID: 1831899586547342459}
   - component: {fileID: 802908668828670797}
   m_Layer: 0
   m_Name: SkeletonDevil
@@ -951,22 +951,6 @@ CapsuleCollider:
   m_Height: 2.1858377
   m_Direction: 1
   m_Center: {x: 0, y: 0.5929189, z: 0}
---- !u!114 &1831899586547342459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5671758111218519610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eadccd621b771749839af2dd840dcd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: {fileID: 2395537570173608586, guid: 38dbf91eece6a874a9856d3d539e3490, type: 3}
-  attackRef: {fileID: 6026557355280133504}
-  chaseRef: {fileID: 6166074994158731063}
-  idleState: {fileID: 466314941014370402}
 --- !u!82 &802908668828670797
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1696,6 +1680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491320886842805199}
+  - component: {fileID: 438625429}
   m_Layer: 0
   m_Name: StateMachine
   m_TagString: Untagged
@@ -1710,8 +1695,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6431374189006301830}
-  m_LocalRotation: {x: -0, y: -0.2004195, z: -0, w: 0.97971016}
-  m_LocalPosition: {x: 4.879407, y: -0.015000001, z: -0.85199094}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1170106703793717411}
@@ -1720,6 +1705,19 @@ Transform:
   m_Father: {fileID: 5671758111218160154}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &438625429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6431374189006301830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eadccd621b771749839af2dd840dcd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: {fileID: 2395537570173608586, guid: 38dbf91eece6a874a9856d3d539e3490, type: 3}
 --- !u!1 &8121752442114815224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,12 +1761,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8262f67806f983449b99a895579eac68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {fileID: 0}
   attackState: {fileID: 6026557355280133504}
-  isInAttackRange: 0
   enemyStats: {fileID: 11400000, guid: 89c78a8aa4caa3746a05dfd91695a427, type: 2}
   enemyAnimator: {fileID: 5671758111360307520}
-  enemyPosition: {fileID: 5671758111218160154}
+  fatherTransform: {fileID: 5671758111218160154}
+  RangeToAttack: 0.5
 --- !u!1001 &5302068548475028627
 PrefabInstance:
   m_ObjectHideFlags: 0

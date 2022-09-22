@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateManager : MonoBehaviour
+public class StateManager : MonoBehaviour//generic for diffrent ai's
 {
-    public State currentState;
-    public State attackRef;
-    public State chaseRef;
-    public State idleState;
+    public State currentState;//Attack
     private void Update()
     {
         RunStateMachine();

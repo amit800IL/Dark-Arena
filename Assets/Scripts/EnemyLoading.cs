@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyLoading : MonoBehaviour
@@ -8,6 +9,8 @@ public class EnemyLoading : MonoBehaviour
     [SerializeField] GameObject skeletonFireRefrence;
     public Transform playerPosition;
     [SerializeField] int maxEnemies;
+    [SerializeField] List<EnemyWave> waves;
+    [SerializeField] int timeBetweenWaves;
 
     int currentEnemies;
     private void Start()
@@ -17,21 +20,29 @@ public class EnemyLoading : MonoBehaviour
 
     IEnumerator enemyLoader()
     {
-        while (currentEnemies < maxEnemies)
+        for (int i = 0; waves.Count > i; i++)
         {
+            yield return new WaitForSeconds(timeBetweenWaves);
+            for (int j = 0; j < waves[i].devilAmount; j++)
+            {
+                
+                Instantiate(skeletonDevilRefrence);
+                yield return new WaitForEndOfFrame();
+            }
             yield return new WaitForSeconds(1);
-            GameObject summonedEnemyGO = Instantiate(skeletonDevilRefrence);
-            StateManager summonedEnemy = summonedEnemyGO.GetComponent<StateManager>();
-            summonedEnemy.attackRef.playerPosition = playerPosition;
-            summonedEnemy.chaseRef.playerPosition = playerPosition;
+            for (int k = 0; k < waves[i].FireAmount; k++)
+            {
+                Instantiate(skeletonFireRefrence);
+                yield return new WaitForEndOfFrame();
 
-            yield return new WaitForSeconds(1);
-            GameObject summonedEnemyGO2 = Instantiate(skeletonFireRefrence);
-            StateManager summonedEnemy2 = summonedEnemyGO2.GetComponent<StateManager>();
-            summonedEnemy2.attackRef.playerPosition = playerPosition;
-            summonedEnemy2.chaseRef.playerPosition = playerPosition;
-
-            currentEnemies += 2;
+            }
         }
+        
     }
+}
+[System.Serializable]
+class EnemyWave
+{
+    public int devilAmount;
+    public int FireAmount;
 }

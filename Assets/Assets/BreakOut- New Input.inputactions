@@ -42,10 +42,10 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Rotate",
+                    "name": "MouseDelta",
                     "type": "Value",
-                    "id": "8bbc2756-a985-4e4b-9d21-c41c192ade79",
-                    "expectedControlType": "",
+                    "id": "64e01bda-e6e0-4694-a583-94486ffab9ac",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -142,23 +142,12 @@
                 },
                 {
                     "name": "",
-                    "id": "845a34f2-e45d-42aa-8d4f-e95e6d1ca0c8",
-                    "path": "<Mouse>/position/x",
+                    "id": "02edb20e-adf2-46ab-9c91-f17d47fbbdfa",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Rotate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "69d69870-1e2c-47d5-91a6-37133c927284",
-                    "path": "<Mouse>/position/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Rotate",
+                    "groups": "",
+                    "action": "MouseDelta",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

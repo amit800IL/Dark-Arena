@@ -1,18 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    PlayerMovement playerMovement;
+    [SerializeField] float RotationSpeed;
+    private void Start()
     {
-        
+        playerMovement = GetComponent<PlayerMovement>();
+    }
+    private void Update()
+    {
+      RotateInut(); 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RotateInut()
     {
-        
+        if (playerMovement.isGrounded)
+        {
+            transform.Rotate(0, InputManager.Instance.GetMouseDelta().x * RotationSpeed * Time.deltaTime, 0);
+        }
+
     }
 }

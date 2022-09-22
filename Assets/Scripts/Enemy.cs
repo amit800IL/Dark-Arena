@@ -13,9 +13,13 @@ public class Enemy : MonoBehaviour
     KillCount killcount;
 
 
-
+    public LayerMask GroundLayer;
     private void Start()
     {
+        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 50, GroundLayer))
+        {
+            transform.position = hit.point;
+        }
         currentHealth = enemyStats.health;
     }
 
@@ -24,8 +28,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("PlayerSword") || other.gameObject.CompareTag("PlayerDagger"))
         {
             Destroy(gameObject);
-            killcount.counting();
-            killcount.killcountNum++;
+            DataSaver.BestkillCountNum++;
         }
     }
 

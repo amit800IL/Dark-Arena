@@ -6,31 +6,25 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     public static InputManager Instance { get; private set; }
-    public DarkArenaNewInput inputActions;
+    public BreakOutNewInput inputActions;
     public UnityEvent onAttack;
     public UnityEvent onJump;
-    public UnityEvent onRotation;
     public UnityEvent onClick;
 
 
     private void Start()
     {
         Instance = this;
-        inputActions = new DarkArenaNewInput();
+        inputActions = new BreakOutNewInput();
         inputActions.Enable();
 
 
         inputActions.Player.Attack.started += Attack_started;
         inputActions.Player.Jump.started += Jump_started;
-        inputActions.Player.Rotate.started += Rotate_started;
         inputActions.UI.Click.started += Press_Started;
 
     }
 
-    private void Rotate_started(InputAction.CallbackContext context)
-    {
-        onRotation?.Invoke();
-    }
 
     private void Jump_started(InputAction.CallbackContext context)
     {
@@ -57,5 +51,8 @@ public class InputManager : MonoBehaviour
         return inputActions.UI.Click.ReadValue<Vector2>();
     }
 
-
+    public Vector2 GetMouseDelta()
+    {
+       return inputActions.Player.MouseDelta.ReadValue<Vector2>();
+    }
 }

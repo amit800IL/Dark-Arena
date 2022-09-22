@@ -1,56 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ChaseState : State
 {
     public AttackState attackState;
-    public bool isInAttackRange;
-    private Vector3 startingPosition;
+    public bool isInAttackRange => Vector3.Distance(fatherTransform.position, playerPosition.position) < RangeToAttack;
     public EnemyScriptableObject enemyStats;
     [SerializeField] EnemyAnimator enemyAnimator;
-    [SerializeField] Transform enemyPosition;
-    [SerializeField] Transform enemyRoation;
-
-    private void Start()
-    {
-        startingPosition = enemyPosition.position;
-    }
-
-    private void Update()
-    {
-        RunCurrentState();
-    }
+    [SerializeField] Transform fatherTransform;
+    [SerializeField] float RangeToAttack;
+    [SerializeField] NavMeshAgent m_agent;
+    //public bool isInRange()
+    //{
+    //    return Vector3.Distance(transform.position, playerPosition.position) < RangeToAttack;
+    //}
     public override State RunCurrentState()
     {
+       
         if (isInAttackRange)
         {
+            m_agent.SetDestination(fatherTransform.position);
             return attackState;
-        }
-        else
-        {
-            if (Physics.Raycast(enemyPosition.position, playerPosition.position, out RaycastHit hit))
-            {
-                enemyAnimator.EnemyChaseState();
 
-                if (Vector3.Distance(enemyPosition.position, playerPosition.position) > 1f)
-                {
-                    float singleStep = enemyStats.speed * Time.deltaTime;
-                    Vector3 newPosition = Vector3.MoveTowards(enemyPosition.position, playerPosition.position, singleStep);
-                    transform.LookAt(playerPosition);
-                    enemyPosition.position = newPosition;
-                    
-                }
-
-            }
         }
+
+
+
+
+
+
+        enemyAnimator.EnemyChaseState();
+        m_agent.SetDestination(playerPosition.position);
+        //float singleStep = enemyStats.speed * Time.deltaTime;
+        //fatherTransform.LookAt(playerPosition);
+        //fatherTransform.position = Vector3.MoveTowards(fatherTransform.position, playerPosition.position, singleStep);
+
 
         return this;
+
+
+
+
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(enemyPosition.position, playerPosition.position);
-    }
+   
 }

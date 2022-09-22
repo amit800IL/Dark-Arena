@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
+
 
     public Animator playerAnimator;
 
@@ -31,11 +31,11 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
 
-    
+
         rb = GetComponent<Rigidbody>();
 
         InputManager.Instance.onJump.AddListener(JumpInput);
-        InputManager.Instance.onRotation.AddListener(RotateInput);
+
 
 
     }
@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-   
+
 
 
     public void JumpInput()
@@ -106,22 +106,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Rotate()
-    {
-
-        float targetAngle = Mathf.Atan2(moveInput.x, moveInput.y) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
-        Quaternion rotation = Quaternion.Euler(0, targetAngle, 0);
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, blendSpeed * Time.deltaTime);
-
-    }
-
-    public void RotateInput()
-    {
-        if (isGrounded)
-        {
-            Rotate();
-        }
-    }
 
     public void Attack(InputAction.CallbackContext context)
     {
