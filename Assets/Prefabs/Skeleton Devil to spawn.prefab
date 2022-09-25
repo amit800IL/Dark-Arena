@@ -5013,9 +5013,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9042784939444910768}
   - component: {fileID: 9042784939431078874}
+  - component: {fileID: 217370578}
   m_Layer: 0
   m_Name: Object01
-  m_TagString: Untagged
+  m_TagString: EnemySword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5087,6 +5088,20 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.014118403, y: 0.00021925569, z: 0.4055761}
     m_Extent: {x: 0.12434602, y: 0.067052856, z: 0.56401914}
   m_DirtyAABB: 0
+--- !u!64 &217370578
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9042784939444676240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: 188f1042b5ff4644389fad5df1f98d7c, type: 3}
 --- !u!1 &9042784939444676242
 GameObject:
   m_ObjectHideFlags: 0
@@ -5134,7 +5149,7 @@ GameObject:
   - component: {fileID: 5203527801193734206}
   - component: {fileID: 5203527802231479384}
   m_Layer: 0
-  m_Name: Skeleton Devil New
+  m_Name: Skeleton Devil to spawn
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5205,7 +5220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkingSpeed: 2
-  enemyStats: {fileID: 11400000, guid: 89c78a8aa4caa3746a05dfd91695a427, type: 2}
+  enemyStats: {fileID: 11400000, guid: 7ecbe5d8481f49f42bbfd4fb74cffb22, type: 2}
   currentHealth: 10
   GroundLayer:
     serializedVersion: 2
@@ -5252,7 +5267,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3fc35fe45face4a4ca9ab0f36fb64716, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.521
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5350,7 +5365,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.9
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

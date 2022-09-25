@@ -14,6 +14,7 @@ public class AttackState : State
         if (!attackingNow)
         {
             EnemyAnimator.triggerAttack();
+            
         }
         if (!chaseState.isInAttackRange)
         {
@@ -22,5 +23,13 @@ public class AttackState : State
         return this;
 
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("EnemySword"))
+        {
+            PlayerStats.Instance.health--;
+        }
     }
 }

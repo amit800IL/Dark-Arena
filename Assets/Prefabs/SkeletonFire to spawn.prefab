@@ -1424,7 +1424,7 @@ GameObject:
   - component: {fileID: 1689865413}
   - component: {fileID: 727494819}
   m_Layer: 0
-  m_Name: SkeletonFire
+  m_Name: SkeletonFire to spawn
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1495,7 +1495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkingSpeed: 5
-  enemyStats: {fileID: 11400000, guid: 6aeba09a41534f0459b967bbb3be7e40, type: 2}
+  enemyStats: {fileID: 11400000, guid: 237b24d3baa756a49892f2509f27d341, type: 2}
   currentHealth: 10
   GroundLayer:
     serializedVersion: 2

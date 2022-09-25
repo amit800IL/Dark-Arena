@@ -270,13 +270,13 @@ public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""StopGame"",
-                    ""type"": ""Button"",
-                    ""id"": ""0a604366-68ee-4036-8ffb-22f07e53ab5c"",
+                    ""name"": ""Stop Game"",
+                    ""type"": ""Value"",
+                    ""id"": ""42b0a784-3420-46af-941c-33113e0e6eb1"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -700,12 +700,12 @@ public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""fb8e3bb5-de01-49f9-b563-b8bc22fa113a"",
+                    ""id"": ""d856b7ca-39e6-498f-8d09-78143745f3b1"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""StopGame"",
+                    ""groups"": """",
+                    ""action"": ""Stop Game"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -794,7 +794,7 @@ public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
-        m_UI_StopGame = m_UI.FindAction("StopGame", throwIfNotFound: true);
+        m_UI_StopGame = m_UI.FindAction("Stop Game", throwIfNotFound: true);
     }
 
     public void Dispose()

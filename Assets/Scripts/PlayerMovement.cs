@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Physhics")]
 
-    [SerializeField] float speed;
     [SerializeField] float jumpForce;
     Rigidbody rb;
     Vector2 moveInput;
@@ -81,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (newMove != null)
         {
-            rb.AddForce(newMove * speed, ForceMode.Impulse);
+            rb.AddForce(newMove * PlayerStats.Instance.speed, ForceMode.Impulse);
         }
     }
 

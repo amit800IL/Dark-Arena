@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
 
         inputActions.Player.Attack.started += Attack_started;
         inputActions.Player.Jump.started += Jump_started;
-        inputActions.UI.Click.started += Press_Started;
+        inputActions.UI.StopGame.started += Press_Started;
 
     }
 
@@ -46,13 +46,14 @@ public class InputManager : MonoBehaviour
         return inputActions.Player.Move.ReadValue<Vector2>();
     }
 
-    public Vector2 getPressInput()
-    {
-        return inputActions.UI.Click.ReadValue<Vector2>();
-    }
 
     public Vector2 GetMouseDelta()
     {
        return inputActions.Player.MouseDelta.ReadValue<Vector2>();
+    }
+
+    public bool GetPressInput()
+    {
+        return inputActions.UI.StopGame.ReadValue<bool>();  
     }
 }

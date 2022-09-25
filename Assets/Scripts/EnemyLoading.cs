@@ -28,14 +28,18 @@ public class EnemyLoading : MonoBehaviour
                 
                 Instantiate(skeletonDevilRefrence);
                 yield return new WaitForEndOfFrame();
+                
             }
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(timeBetweenWaves);
             for (int k = 0; k < waves[i].FireAmount; k++)
             {
                 Instantiate(skeletonFireRefrence);
                 yield return new WaitForEndOfFrame();
 
             }
+
+            DataSaver.bestWavesSurvivedNum++;
+           
         }
         
     }

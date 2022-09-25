@@ -10,6 +10,8 @@ public class BridgeMover : MonoBehaviour
     bool isMovingToTarget;
     public bool move;
 
+    
+
     private void Start()
     {
         move = true;

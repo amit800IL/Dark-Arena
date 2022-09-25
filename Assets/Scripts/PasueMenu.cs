@@ -12,23 +12,25 @@ public class PasueMenu : MonoBehaviour
 
     private void Start()
     {
-        //InputManager.Instance.onClick.AddListener(Resume);
-       
+        InputManager.Instance.onClick.AddListener(PasueInput);
+
     }
 
-    private void Update()
-    {
-           
-            if (gameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
 
-        
+    public void PasueInput()
+    {
+        if (InputManager.Instance.GetPressInput())
+        {
+        if (gameIsPaused)
+        {
+            Resume();
+        }
+        else
+        {
+            Pause();
+        }
+
+        }
     }
 
     public void Resume()

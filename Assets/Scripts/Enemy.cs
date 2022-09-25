@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
+ 
     int sightrange;
     [SerializeField] float walkingSpeed;
     bool playerFound;
@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public EnemyScriptableObject enemyStats;
     public int currentHealth;
     KillCount killcount;
+
 
 
     public LayerMask GroundLayer;
@@ -27,8 +28,14 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerSword") || other.gameObject.CompareTag("PlayerDagger"))
         {
+            enemyStats.health-=5;
+
+            if(enemyStats.health <= 0)
+            {
             Destroy(gameObject);
             DataSaver.BestkillCountNum++;
+
+            }
         }
     }
 
