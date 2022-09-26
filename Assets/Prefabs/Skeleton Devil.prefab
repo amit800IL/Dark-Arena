@@ -5222,6 +5222,7 @@ MonoBehaviour:
   walkingSpeed: 2
   enemyStats: {fileID: 11400000, guid: 89c78a8aa4caa3746a05dfd91695a427, type: 2}
   currentHealth: 10
+  data: {fileID: 3984161832592302646, guid: a155f9f40134ec3499329b4fc3fd3777, type: 3}
   GroundLayer:
     serializedVersion: 2
     m_Bits: 8

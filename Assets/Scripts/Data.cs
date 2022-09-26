@@ -12,9 +12,14 @@ public class Data : MonoBehaviour
         saveFilePath = Application.persistentDataPath + "/gameData.Json";
     }
 
+    private void Start()
+    {
+        ReadFromJson();
+    }
     public void WriteToJson()
     {
-
+        gameData.savedBestKillCount = DataSaver.BestkillCountNum;
+        gameData.savedBestWavesCount = DataSaver.bestWavesSurvivedNum;
         string JsonString = JsonUtility.ToJson(gameData);
         File.WriteAllText(saveFilePath, JsonString);
 

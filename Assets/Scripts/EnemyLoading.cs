@@ -11,6 +11,7 @@ public class EnemyLoading : MonoBehaviour
     [SerializeField] int maxEnemies;
     [SerializeField] List<EnemyWave> waves;
     [SerializeField] int timeBetweenWaves;
+    [SerializeField]Data data;
 
     int currentEnemies;
     private void Start()
@@ -39,6 +40,8 @@ public class EnemyLoading : MonoBehaviour
             }
 
             DataSaver.bestWavesSurvivedNum++;
+            data.WriteToJson();
+
            
         }
         

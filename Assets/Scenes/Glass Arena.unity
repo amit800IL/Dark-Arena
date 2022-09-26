@@ -547,6 +547,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe19b36ccdbdb3546a6ed028a4e30687, type: 3}
+--- !u!1 &281414496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 281414498}
+  - component: {fileID: 281414497}
+  m_Layer: 0
+  m_Name: DataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &281414497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281414496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0fa6ed9d1724f74db2ac9bf3a25b56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData:
+    savedBestKillCount: 0
+    savedBestWavesCount: 0
+--- !u!4 &281414498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281414496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.948736, y: -0.13388586, z: -25.960901}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289375945 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7462036371361415008, guid: fe19b36ccdbdb3546a6ed028a4e30687, type: 3}
@@ -689,6 +735,7 @@ MonoBehaviour:
   - devilAmount: 6
     FireAmount: 6
   timeBetweenWaves: 5
+  data: {fileID: 281414497}
 --- !u!4 &638030286
 Transform:
   m_ObjectHideFlags: 0
@@ -1144,6 +1191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonFire
       objectReference: {fileID: 0}
+    - target: {fileID: 8363390910188768167, guid: 38dbf91eece6a874a9856d3d539e3490, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 281414497}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38dbf91eece6a874a9856d3d539e3490, type: 3}
 --- !u!1001 &1074843213
@@ -1338,6 +1389,26 @@ PrefabInstance:
     - target: {fileID: 4000013269771590, guid: 1512c77990cb04c4f938cc3effeb608d, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000012582013028, guid: 1512c77990cb04c4f938cc3effeb608d, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.43529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000012582013028, guid: 1512c77990cb04c4f938cc3effeb608d, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.25272474
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000012582013028, guid: 1512c77990cb04c4f938cc3effeb608d, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.12175146
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000012582013028, guid: 1512c77990cb04c4f938cc3effeb608d, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.25326607
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000012582013028, guid: 1512c77990cb04c4f938cc3effeb608d, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.8962264
       objectReference: {fileID: 0}
     - target: {fileID: 198000012582013028, guid: 1512c77990cb04c4f938cc3effeb608d, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
@@ -2133,7 +2204,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1501879045 stripped
 GameObject:
@@ -2575,6 +2646,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4334186119348660060, guid: 7fbaba2c38f13be41b570b5422daf944, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 281414497}
     - target: {fileID: 9042784939444676244, guid: 7fbaba2c38f13be41b570b5422daf944, type: 3}
       propertyPath: m_Name
       value: Skeleton Devil New

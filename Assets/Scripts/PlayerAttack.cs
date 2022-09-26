@@ -7,17 +7,16 @@ using UnityEngine.Audio;
 public class PlayerAttack : MonoBehaviour
 {
 
-    Rigidbody rb;
-
+    public UnityEvent onAttackStart;
+    public UnityEvent onAttackEnd;
+    public AudioSource AttackVoice;
     [SerializeField] LayerMask groundMask;
     [SerializeField] private Transform GroundCheck;
     [SerializeField] private float GroundDistance;
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] MeshCollider SwordCollider;
     [SerializeField] MeshCollider DaggerCollider;
-    public UnityEvent onAttackStart;
-    public UnityEvent onAttackEnd;
-    public AudioSource AttackVoice;
+    Rigidbody rb;
     private void Start()
     {
 
@@ -44,12 +43,12 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
-    public void SetAttackStart()//called by animation event
+    public void SetAttackStart()
     {
         onAttackStart?.Invoke();
     }
 
-    public void SetAttackEnd()//called by animation event
+    public void SetAttackEnd()
     {
         onAttackEnd?.Invoke();
     }

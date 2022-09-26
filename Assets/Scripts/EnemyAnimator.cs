@@ -7,6 +7,7 @@ public class EnemyAnimator : MonoBehaviour
 {
     [SerializeField] int movementState;
     public AudioSource zombieScream;
+    [SerializeField] bool IsDamaged;
 
 
     [ContextMenu("Set State")]
@@ -30,5 +31,12 @@ public class EnemyAnimator : MonoBehaviour
     {
         AttackState.attackingNow = false;
 
+    }
+
+    public void EnemyIsDamaged()
+    {
+        Animator animator = GetComponent<Animator>();
+        animator.SetBool("IsDamaged", IsDamaged);
+        
     }
 }
