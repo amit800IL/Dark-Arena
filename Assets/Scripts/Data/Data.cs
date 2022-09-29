@@ -38,6 +38,16 @@ public class Data : MonoBehaviour
         }
     }
 
+    //public void RestoreJson()
+    //{
+    //  if (File.Exists(saveFilePath))
+    //    {
+    //        File.Delete(saveFilePath);
+    //        string JsonString = JsonUtility.ToJson(saveFilePath);
+    //        File.WriteAllText(saveFilePath, JsonString);
+    //    }
+    //}
+
 
     [System.Serializable]
     public class GameData

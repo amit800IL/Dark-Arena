@@ -1499,7 +1499,7 @@ MonoBehaviour:
   walkingSpeed: 5
   enemyAnimator: {fileID: 3839538630207624469}
   enemyStats: {fileID: 11400000, guid: 6aeba09a41534f0459b967bbb3be7e40, type: 2}
-  data: {fileID: 0}
+  data: {fileID: 134271826234429171, guid: b8df86169537f91419a3ef9fa14cdf96, type: 3}
   GroundLayer:
     serializedVersion: 2
     m_Bits: 8
