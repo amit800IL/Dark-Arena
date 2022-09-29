@@ -271,7 +271,7 @@ public partial class @BreakOutNewInput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Stop Game"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""42b0a784-3420-46af-941c-33113e0e6eb1"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",

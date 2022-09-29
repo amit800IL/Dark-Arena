@@ -52,8 +52,4 @@ public class InputManager : MonoBehaviour
        return inputActions.Player.MouseDelta.ReadValue<Vector2>();
     }
 
-    public bool GetPressInput()
-    {
-        return inputActions.UI.StopGame.ReadValue<bool>();  
-    }
 }

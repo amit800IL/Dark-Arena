@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0834dd452f26b44b9c04f6ace63b26c, type: 3}
   m_Name: SkeletonDevil
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
   damage: 10
   speed: 10

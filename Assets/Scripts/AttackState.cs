@@ -27,9 +27,10 @@ public class AttackState : State
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("EnemySword"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            PlayerStats.Instance.health--;
+
+            PlayerStats.Instance.healthManager.TakeDamage(2);
         }
     }
 }

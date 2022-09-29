@@ -19,8 +19,7 @@ public class PasueMenu : MonoBehaviour
 
     public void PasueInput()
     {
-        if (InputManager.Instance.GetPressInput())
-        {
+
         if (gameIsPaused)
         {
             Resume();
@@ -30,7 +29,7 @@ public class PasueMenu : MonoBehaviour
             Pause();
         }
 
-        }
+        
     }
 
     public void Resume()

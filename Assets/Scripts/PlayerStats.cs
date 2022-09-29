@@ -8,9 +8,11 @@ public class PlayerStats : MonoBehaviour
     public float health;
     public float speed;
     public float attackPower;
+    public PlayerHealthManager healthManager;
 
     private void Start()
     {
         Instance = this;    
     }
+
 }

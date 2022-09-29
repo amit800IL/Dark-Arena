@@ -8,12 +8,13 @@ public class EnemyAnimator : MonoBehaviour
     [SerializeField] int movementState;
     public AudioSource zombieScream;
     [SerializeField] bool IsDamaged;
+    [SerializeField]private Animator animator;
 
 
     [ContextMenu("Set State")]
     public void EnemyChaseState()
     {
-        Animator animator = GetComponent<Animator>();
+        
         animator.SetInteger("Movement" , movementState);
         zombieScream.Play();    
     }
@@ -23,7 +24,6 @@ public class EnemyAnimator : MonoBehaviour
     public void triggerAttack()
     {
         AttackState.attackingNow = true;
-        Animator animator = GetComponent<Animator>();
         animator.SetTrigger("Attack");
     }
 
@@ -35,8 +35,7 @@ public class EnemyAnimator : MonoBehaviour
 
     public void EnemyIsDamaged()
     {
-        Animator animator = GetComponent<Animator>();
-        animator.SetBool("IsDamaged", IsDamaged);
+        animator.SetTrigger("IsDamaged");
         
     }
 }

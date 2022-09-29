@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyLoading : MonoBehaviour
 {
@@ -9,32 +10,55 @@ public class EnemyLoading : MonoBehaviour
     [SerializeField] GameObject skeletonFireRefrence;
     public Transform playerPosition;
     [SerializeField] int maxEnemies;
-    [SerializeField] List<EnemyWave> waves;
+    [SerializeField] List<EnemyWave> EasyWaves;
+    [SerializeField] List<EnemyWave> MediumWaves;
+    [SerializeField] List<EnemyWave> HardWaves;
     [SerializeField] int timeBetweenWaves;
-    [SerializeField]Data data;
+    [SerializeField] Data data;
+    [SerializeField] Slider volumeSlider;
 
     int currentEnemies;
     private void Start()
     {
-        StartCoroutine(enemyLoader());
+        List<EnemyWave> currentEnemyWaves = GetCurrentWave();
+        StartCoroutine(enemyLoader(currentEnemyWaves));
     }
 
-    IEnumerator enemyLoader()
+    private List<EnemyWave> GetCurrentWave()
     {
-        for (int i = 0; waves.Count > i; i++)
+        int Diff = PlayerPrefs.GetInt("Diff");
+
+        switch (Diff)
+        {
+            case 0:
+                return EasyWaves;
+            case 1:
+                return MediumWaves;
+            case 2:
+                return HardWaves;
+
+            default: return EasyWaves;
+
+        }
+    }
+    IEnumerator enemyLoader(List<EnemyWave> enemyWaves)
+    {
+        for (int i = 0; enemyWaves.Count > i; i++)
         {
             yield return new WaitForSeconds(timeBetweenWaves);
-            for (int j = 0; j < waves[i].devilAmount; j++)
+            for (int j = 0; j < enemyWaves[i].devilAmount; j++)
             {
-                
-                Instantiate(skeletonDevilRefrence);
+
+                GameObject temp = Instantiate(skeletonDevilRefrence);
+                temp.GetComponent<AudioSource>().volume = volumeSlider.value;
                 yield return new WaitForEndOfFrame();
-                
+
             }
             yield return new WaitForSeconds(timeBetweenWaves);
-            for (int k = 0; k < waves[i].FireAmount; k++)
+            for (int k = 0; k < enemyWaves[i].FireAmount; k++)
             {
-                Instantiate(skeletonFireRefrence);
+                GameObject temp = Instantiate(skeletonFireRefrence);
+                temp.GetComponent<AudioSource>().volume = volumeSlider.value;
                 yield return new WaitForEndOfFrame();
 
             }
@@ -42,9 +66,9 @@ public class EnemyLoading : MonoBehaviour
             DataSaver.bestWavesSurvivedNum++;
             data.WriteToJson();
 
-           
+
         }
-        
+
     }
 }
 [System.Serializable]

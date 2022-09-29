@@ -4,9 +4,9 @@ using UnityEngine.InputSystem;
 
 public class OptionsMenu : MonoBehaviour
 {
-    public AudioMixer audioMixer;
-    public void SetVolume(float volume)
+    public AudioSource menuAudioSource;
+    public void SetVolume(float _volume)
     {
-        audioMixer.SetFloat("Volume", volume);
+        menuAudioSource.volume = _volume;
     }
 }
