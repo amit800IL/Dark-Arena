@@ -5,21 +5,23 @@ using UnityEngine.UI;
 
 public class EnemyLoading : MonoBehaviour
 {
-
+   
+    public Transform playerPosition;
+    public List<EnemyWave> EasyWaves;
+    public List<EnemyWave> MediumWaves;
+    public List<EnemyWave> HardWaves;
+    private int currentEnemies;
     [SerializeField] GameObject skeletonDevilRefrence;
     [SerializeField] GameObject skeletonFireRefrence;
-    public Transform playerPosition;
     [SerializeField] int maxEnemies;
-    [SerializeField] List<EnemyWave> EasyWaves;
-    [SerializeField] List<EnemyWave> MediumWaves;
-    [SerializeField] List<EnemyWave> HardWaves;
     [SerializeField] int timeBetweenWaves;
     [SerializeField] Data data;
     [SerializeField] Slider volumeSlider;
+    [SerializeField] GameScreens screens;
 
-    int currentEnemies;
     private void Start()
     {
+       
         List<EnemyWave> currentEnemyWaves = GetCurrentWave();
         StartCoroutine(enemyLoader(currentEnemyWaves));
     }
@@ -67,12 +69,13 @@ public class EnemyLoading : MonoBehaviour
             data.WriteToJson();
 
 
+
         }
 
     }
 }
 [System.Serializable]
-class EnemyWave
+public class EnemyWave
 {
     public int devilAmount;
     public int FireAmount;

@@ -15,6 +15,6 @@ public class OptionsMenu : MonoBehaviour
 
     public void RestoreData()
     {
-       //data.RestoreJson();
+        data.RestoreJson();
     }
 }

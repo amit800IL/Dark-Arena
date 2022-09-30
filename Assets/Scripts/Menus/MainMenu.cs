@@ -8,13 +8,6 @@ using UnityEngine.Events;
 public class MainMenu : MonoBehaviour
 {
     bool isClicked;
-    private void Start()
-    {
-        //InputManager.Instance.useGUILayout = true;
-        //InputManager.Instance.onClick.AddListener(PlayGame);
-        //InputManager.Instance.onClick.AddListener(QuitGame);
-
-    }
     public void PlayGame()
     {
         
