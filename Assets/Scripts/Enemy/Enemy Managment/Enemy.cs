@@ -4,15 +4,16 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    int sightrange;
-    [SerializeField] float walkingSpeed;
-    bool playerFound;
-    [SerializeField] EnemyAnimator enemyAnimator;
     public EnemyScriptableObject enemyStats;
-    private int currentHealth;
-    UiManager killcount;
+    [SerializeField] float walkingSpeed;
+    [SerializeField] EnemyAnimator enemyAnimator;
+    [SerializeField] UiManager killcount;
     [SerializeField] Data data;
+    int sightrange;
+    bool playerFound;
+    private int currentHealth;
     bool isVulnerable;
+
 
 
 
@@ -47,10 +48,12 @@ public class Enemy : MonoBehaviour
             {
                 Destroy(gameObject);
                 DataSaver.BestkillCountNum++;
+                EnemyLoading.enemyNum--;
+
             }
-            data.WriteToJson();
+
         }
-       
+
     }
 
     private void SetIsVulnerable() => isVulnerable = true;

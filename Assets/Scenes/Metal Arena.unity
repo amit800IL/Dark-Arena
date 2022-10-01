@@ -214,6 +214,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 71bd4dc2567e3b1418e5c22885b81524, type: 2}
+    - target: {fileID: -3505909645986988234, guid: fe19b36ccdbdb3546a6ed028a4e30687, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: af8151eb140a3604faf5751163290aeb, type: 2}
     - target: {fileID: -3449034168685681036, guid: fe19b36ccdbdb3546a6ed028a4e30687, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -229,7 +233,7 @@ PrefabInstance:
     - target: {fileID: -1606711844724305572, guid: fe19b36ccdbdb3546a6ed028a4e30687, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7c6193cd5aad1fa43ba47a77836e162b, type: 2}
+      objectReference: {fileID: 2100000, guid: fd25845364a82c944b630b5156db6119, type: 2}
     - target: {fileID: -492420421572216379, guid: fe19b36ccdbdb3546a6ed028a4e30687, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -325,11 +329,11 @@ PrefabInstance:
     - target: {fileID: 2163735034997373106, guid: fe19b36ccdbdb3546a6ed028a4e30687, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f8f05f1077f68df459823393a4f806fe, type: 2}
+      objectReference: {fileID: 2100000, guid: 1d81ec0e5ea64684b884c0b9d084f8a9, type: 2}
     - target: {fileID: 3204693580846015807, guid: fe19b36ccdbdb3546a6ed028a4e30687, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: fd25845364a82c944b630b5156db6119, type: 2}
+      objectReference: {fileID: 2100000, guid: b69562b35d2c2e64d987988abae944f3, type: 2}
     - target: {fileID: 3898341091641849393, guid: fe19b36ccdbdb3546a6ed028a4e30687, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -877,6 +881,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 259305625, guid: 38dbf91eece6a874a9856d3d539e3490, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 259305625, guid: 38dbf91eece6a874a9856d3d539e3490, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3839538629795993167, guid: 38dbf91eece6a874a9856d3d539e3490, type: 3}
       propertyPath: m_RootOrder
       value: 0

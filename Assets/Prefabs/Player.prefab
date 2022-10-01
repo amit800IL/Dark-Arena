@@ -1498,6 +1498,7 @@ GameObject:
   - component: {fileID: 111212280}
   - component: {fileID: 111212284}
   - component: {fileID: 111212286}
+  - component: {fileID: 319652144}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1742,9 +1743,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab335ab8da5e6744982afb94c62428d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 30
   speed: 2
   attackPower: 10
+  healthManager: {fileID: 319652144}
+--- !u!114 &319652144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3066467215712525482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce9daf0cf7723e43b0d57870caf72d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8585474799095028842}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: IsHit
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3265279323250674781
 GameObject:
   m_ObjectHideFlags: 0

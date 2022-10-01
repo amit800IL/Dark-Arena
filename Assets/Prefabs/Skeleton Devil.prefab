@@ -5001,7 +5001,7 @@ GameObject:
   - component: {fileID: 217370578}
   - component: {fileID: 2246236208864913919}
   m_Layer: 0
-  m_Name: Object01
+  m_Name: SkeletonDevilSword
   m_TagString: EnemySword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5083,7 +5083,7 @@ MeshCollider:
   m_GameObject: {fileID: 9042784939444676240}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -5205,10 +5205,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21aaa2ee9790b0b40a6e743bc301a1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementState: 5
   zombieScream: {fileID: 5203527801193734206}
+  movementState: 5
   IsDamaged: 0
   animator: {fileID: 9042784939435316506}
+  EnemySwordCollider: {fileID: 217370578}
+  onAttackStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onAttackEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4334186119348660060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5221,10 +5228,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f90e2aaf502f84fb8c2b78fb9138c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: 89c78a8aa4caa3746a05dfd91695a427, type: 2}
   walkingSpeed: 2
   enemyAnimator: {fileID: 9042784939033410030}
-  enemyStats: {fileID: 11400000, guid: 89c78a8aa4caa3746a05dfd91695a427, type: 2}
-  data: {fileID: 3984161832592302646, guid: a155f9f40134ec3499329b4fc3fd3777, type: 3}
+  killcount: {fileID: 2554378326836060363, guid: 3ae1e61a3a2191f428ffdd310d022540, type: 3}
+  data: {fileID: 0}
   GroundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5366,7 +5374,7 @@ NavMeshAgent:
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
-  avoidancePriority: 50
+  avoidancePriority: 10
   m_AngularSpeed: 180
   m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1

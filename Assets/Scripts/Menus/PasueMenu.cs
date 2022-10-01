@@ -9,6 +9,7 @@ public class PasueMenu : MonoBehaviour
     public static bool gameIsPaused = false;
     public GameObject pasueMenuUI;
     public AudioSource sountrackMusic;
+  
 
     private void Start()
     {
@@ -50,6 +51,7 @@ public class PasueMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         sountrackMusic.Pause();
+       
     }
 
     public void loadeMenu()
