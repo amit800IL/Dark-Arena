@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9027563834619423837}
   - component: {fileID: 3310175863795054107}
   m_Layer: 0
-  m_Name: Enemy Glow
+  m_Name: Enemy Light Devil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

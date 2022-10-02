@@ -4,20 +4,17 @@ using UnityEngine.Events;
 public class AttackState : State
 {
 
+    public static bool attackingNow = false;
     [SerializeField] EnemyAnimator EnemyAnimator;
     [SerializeField] ChaseState chaseState;
-    public static bool attackingNow = false;
   
     
-    private void Start()
-    {
-        
-    }
     public override State RunCurrentState()
     {
 
         if (!attackingNow)
         {
+           
             EnemyAnimator.triggerAttack();
         }
         if (!chaseState.isInAttackRange)

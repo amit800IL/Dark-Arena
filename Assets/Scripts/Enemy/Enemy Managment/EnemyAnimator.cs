@@ -58,12 +58,12 @@ public class EnemyAnimator : MonoBehaviour
         EnemySwordCollider.enabled = false;
     }
 
-    public void SetAttackStart()
+    public void SetEnemyAttackStart()
     {
         onAttackStart?.Invoke();
     }
 
-    public void SetAttackEnd()
+    public void SetEnemyAttackEnd()
     {
         onAttackEnd?.Invoke();
     }

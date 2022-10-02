@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerLook : MonoBehaviour
 {
 
-    PlayerMovement playerMovement;
     [SerializeField] float RotationSpeed;
+    PlayerMovement playerMovement;
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();

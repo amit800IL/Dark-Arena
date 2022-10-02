@@ -9,12 +9,5 @@ public abstract class State : MonoBehaviour
     public abstract State RunCurrentState();
 
 
-   
-
-
-
-    //public Transform playerPosition()
-    //{
-    //    return GameManager.instance.playerTransform;
-    //}
+  
 }

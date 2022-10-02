@@ -1800,10 +1800,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseState: {fileID: 7983839209060383153}
   canSeePlayer: 1
-  sightRange: 20
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 64
+  sightRange: 20
 --- !u!1001 &8378840245060894684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1857,7 +1857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5995609285165881936, guid: 32fee28d3b08f45438946b95057c0854, type: 3}
       propertyPath: m_Name
-      value: Robot Explosion
+      value: Enemy Light Fire
       objectReference: {fileID: 0}
     - target: {fileID: 9027563834619423837, guid: 32fee28d3b08f45438946b95057c0854, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g

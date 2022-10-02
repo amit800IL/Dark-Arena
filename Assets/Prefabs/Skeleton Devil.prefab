@@ -92,10 +92,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseState: {fileID: 2808820661430900042}
   canSeePlayer: 1
-  sightRange: 20
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 64
+  sightRange: 20
 --- !u!1 &6134223354910246063
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 4699896822137782138}
   - component: {fileID: 1261326002160035132}
   m_Layer: 0
-  m_Name: Robot Explosion
+  m_Name: Enemy Light Devil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

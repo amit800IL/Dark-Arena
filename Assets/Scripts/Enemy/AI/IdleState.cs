@@ -4,8 +4,8 @@ public class IdleState : State
 {
     public ChaseState chaseState;
     public bool canSeePlayer;
-    [SerializeField] float sightRange;
     public LayerMask PlayerLayer;
+    [SerializeField] float sightRange;
     public override State RunCurrentState()
     {
         canSeePlayer = Physics.Raycast(transform.position, (playerPosition.position - transform.position).normalized, sightRange, PlayerLayer);

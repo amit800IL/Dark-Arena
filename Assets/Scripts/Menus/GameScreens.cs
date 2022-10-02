@@ -19,7 +19,7 @@ public class GameScreens : MonoBehaviour
         if (PlayerStats.Instance.health <= 0)
         {
 
-            Debug.Log("Runs");
+          
             LossScreen.SetActive(true);
             Time.timeScale = 0f;
 
@@ -35,15 +35,14 @@ public class GameScreens : MonoBehaviour
 
     }
 
-    void Victory()
+    public void Victory()
     {
 
         if (EnemyLoading.enemyNum <= 0)
         {
 
-            Time.timeScale = 0f;
             VictoryScreen.SetActive(true);
-
+            Time.timeScale = 0f;
 
         }
 

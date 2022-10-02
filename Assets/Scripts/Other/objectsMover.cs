@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BridgeMover : MonoBehaviour
+public class objectsMover : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    [SerializeField] int moveSpeed;
+    public bool move;
     Vector3 startingPosition;
     bool isMovingToTarget;
-    public bool move;
+    [SerializeField] Transform target;
+    [SerializeField] int moveSpeed;
 
     
 

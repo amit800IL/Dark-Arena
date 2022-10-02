@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Data : MonoBehaviour
 {
-    string saveFilePath;
     public GameData gameData;
+    string saveFilePath;
 
     private void Awake()
     {

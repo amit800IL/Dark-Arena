@@ -8,7 +8,6 @@ public class EnemyLoading : MonoBehaviour
 
     public Transform playerPosition;
     public static int enemyNum = 2;
-    private int currentEnemies;
     [SerializeField] List<EnemyWave> EasyWaves;
     [SerializeField] List<EnemyWave> MediumWaves;
     [SerializeField] List<EnemyWave> HardWaves;

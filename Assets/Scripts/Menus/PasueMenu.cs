@@ -37,19 +37,15 @@ public class PasueMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         gameIsPaused = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         pasueMenuUI.SetActive(false);
         sountrackMusic.Play();
     }
 
     public void Pause()
     {
-        pasueMenuUI.SetActive(true);
         Time.timeScale = 0f;
+        pasueMenuUI.SetActive(true);
         gameIsPaused = true;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
         sountrackMusic.Pause();
        
     }
